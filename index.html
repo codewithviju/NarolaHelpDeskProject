@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>I m Here To Write Your Daily Update</h2>
+          
+            <div class="form-group">
+              <label for="">Client Name : </label>
+              <input
+                type="text"
+                name="client_name"
+                id="client_name"
+                value=""
+                class="form-control"
+                onkeyup="getClientValue()"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Project Name : </label>
+              <input
+                type="text"
+                name=""
+                id="project_name"
+                class="form-control"
+                onkeyup="getProjectName()"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">List Of Completed Task : </label>
+              <input
+                type="text"
+                name=""
+                id="completed_task"
+                class="form-control"
+                
+              />
+              <span class="text-danger" id="error_task"></span>
+              <button id="task_btn" class="btn btn-primary">+</button>
+              <div id="add_more_task"></div>
+            </div>
+            <div class="form-group">
+              <label for="">List Of In-Progress Task : </label>
+              <input
+                type="text"
+                name=""
+                id="progress_task"
+                class="form-control"
+              />
+              <span class="text-danger" id="progress_task_error"></span>
+              <button id="progress_task_btn" class="btn btn-primary">+</button>
+              <div id="add_more_progress_task"></div>
+            </div>
+            <div class="form-group">
+              <label for="">List Of Remaining Task : </label>
+              <input
+                type="text"
+                name=""
+                id="remaining_task"
+                class="form-control"
+              />
+              <span class="text-danger" id="remaining_task_error"></span>
+              <button id="remaining_task_btn" class="btn btn-primary">+</button>
+              <div id="add_more_remaining_task"></div>
+            </div>
+            <div class="form-group">
+              <label for="">Queries : </label>
+              <input type="text" name="" id="queries" class="form-control" />
+              <span class="text-danger" id="query_error"></span>
+              <button id="query_task_btn" class="btn btn-primary">+</button>
+              <div id="query_task"></div>
+            </div>
+            <div class="form-group">
+              <label for="">Notes : </label>
+              <input type="text" name="" id="notes" class="form-control" />
+              <span class="text-danger" id="notes_error"></span>
+              <button id="notes_task_btn" class="btn btn-primary">+</button>
+              <div id="note_tasks"></div>
+            </div>
+            <div class="form-group">
+              <label for="">TL Name : </label>
+              <input type="text" name="" id="tl_name" class="form-control" onkeyup="changeTlName()" />
+            </div>
+            
+         
+        </div>
+
+        <div class="col-md-6 mt-5" id="info">
+            
+          <p>
+            Updates For <span id="cl_name"></span> as on <span id="date"></span>
+          </p>
+          <hr>
+          Hi <span id="getName"></span>
+
+          <p>
+            Following Are The Updates for <span id="cl2_name"></span> as on
+            <span id="date2"></span>
+          </p>
+
+          <ol type="number" id="items">
+           <p style="font-weight: bold; text-decoration: underline;">List Of Completed Task :</p> 
+          </ol>
+          <ol type="number" id="progress_items">
+            <p style="font-weight: bold; text-decoration: underline;"> List Of In-Progress Task : </p>
+          </ol>
+          <ol type="number" id="add_remaining_task">
+            <p style="font-weight: bold; text-decoration: underline;"> List of Remaining Task </p>
+          </ol>
+          <ol type="number" id="add_queries">
+            <p style="font-weight: bold; text-decoration: underline;">Queries :</p></ol>
+          </ol>
+          <ol type="number" id="add_notes">
+            <p style="font-weight: bold; text-decoration: underline;"> Notes : </p> 
+          </ol>
+          <p>Please check with the latest updates and let us know your thoughts for the same.
+          </p>
+          <p>
+            Thanks <br>
+            <span id="tl_name_info"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
