@@ -1,17 +1,15 @@
 let counter = 1;
 
-function load() {
-  
-}
+function load() {}
 function getClientValue() {
-  $("#getName").show()
+  $("#getName").show();
   var title = document.getElementById("client_name").value;
-  document.getElementById("getName").innerText ="Hi" + " " + title + ",";
+  document.getElementById("getName").innerText = "Hi" + " " + title + ",";
 }
 
 function getProjectName() {
-  $("#cl_name").show()
-  $("#hr").show()
+  $("#cl_name").show();
+  $("#hr").show();
   var dateObj = new Date();
   var month = dateObj.getUTCMonth() + 1;
   var day = dateObj.getUTCDate();
@@ -37,29 +35,49 @@ function getProjectName() {
   $("#date").text(newdate);
   $("#date2").text(newdate);
   var title = document.getElementById("project_name").value;
-  document.getElementById("cl_name").innerText = "Updates for "+ title + " As on " + day + "th" + " " + finalMonth + "," + " " + year ;
-  document.getElementById("cl2_name").innerText = "Following Are The Updates for " + title + " As On "+ day + "th" + " " + finalMonth + "," + " " + year;
+  document.getElementById("cl_name").innerText =
+    "Updates for " +
+    title +
+    " As on " +
+    day +
+    "th" +
+    " " +
+    finalMonth +
+    "," +
+    " " +
+    year;
+  document.getElementById("cl2_name").innerText =
+    "Following Are The Updates for " +
+    title +
+    " As On " +
+    day +
+    "th" +
+    " " +
+    finalMonth +
+    "," +
+    " " +
+    year;
 }
 
 function changeTlName() {
   var title = document.getElementById("tl_name").value;
-  document.getElementById("tl_name_info").innerText =  "Thanks " + title;
+  document.getElementById("tl_name_info").innerText = "Thanks " + title;
 }
 
 $(document).ready(function () {
-  $("#getName").hide()
-  $("#cl_name").hide()
-  $("#hr").hide()
-  $("#comtask").hide()
-  $("#protask").hide()
-  $("#remaintask").hide()
-  $("#Queries").hide()
-  $("#notestitle").hide()
-  $("#info").hide()
+  $("#getName").hide();
+  $("#cl_name").hide();
+  $("#hr").hide();
+  $("#comtask").hide();
+  $("#protask").hide();
+  $("#remaintask").hide();
+  $("#Queries").hide();
+  $("#notestitle").hide();
+  $("#info").hide();
   $("#completed_task").change(function () {
-    $("#comtask").show()
+    $("#comtask").show();
     $("#error_task").hide();
-    $("#info").show()
+    $("#info").show();
     var value = $("#completed_task").val();
 
     $("#items").append("<li> " + value + "[Done] " + "  </li>");
@@ -69,8 +87,8 @@ $(document).ready(function () {
 
   $("#progress_task").change(function () {
     $("#progress_task_error").hide();
-    $("#protask").show()
-    $("#info").show()
+    $("#protask").show();
+    $("#info").show();
     var value = $("#progress_task").val();
 
     $("#progress_items").append("<li> " + value + "[Done] " + " </li>");
@@ -78,8 +96,8 @@ $(document).ready(function () {
 
   $("#remaining_task").change(function () {
     $("#remaining_task_error").hide();
-    $("#remaintask").show()
-    $("#info").show()
+    $("#remaintask").show();
+    $("#info").show();
     var value = $("#remaining_task").val();
 
     $("#add_remaining_task").append("<li> " + value + "[Done] " + " </li>");
@@ -87,16 +105,16 @@ $(document).ready(function () {
 
   $("#queries").change(function () {
     $("#query_error").hide();
-    $("#Queries").show()
-    $("#info").show()
+    $("#Queries").show();
+    $("#info").show();
     var value = $("#queries").val();
     $("#add_queries").append("<li> " + value + "[Done] " + " </li>");
   });
 
   $("#notes").change(function () {
     $("#notes_error").hide();
-    $("#notestitle").show()
-    $("#info").show()
+    $("#notestitle").show();
+    $("#info").show();
     var value = $("#notes").val();
     $("#add_notes").append("<li> " + value + "[Done] " + " </li>");
   });
@@ -116,7 +134,7 @@ $(document).ready(function () {
       $("#add_more_task").append(
         '<div class="form-group" id="box' +
           counter +
-          '"> <input class="form-control" id="input' +
+          '"> <input class="form-control" placeholder="Done Task" id="input' +
           counter +
           '" onchange="AddValue(' +
           counter +
@@ -143,7 +161,7 @@ $(document).ready(function () {
       $("#add_more_progress_task").append(
         '<div class="form-group" id="pro_div' +
           counter +
-          '"> <input class="form-control" id="pro_input' +
+          '"> <input class="form-control" placeholder="Done Task" id="pro_input' +
           counter +
           '" onchange="AddValueToProgTask( ' +
           counter +
@@ -168,7 +186,7 @@ $(document).ready(function () {
       $("#add_more_remaining_task").append(
         '<div class="form-group" id="remaining_div' +
           counter +
-          '"> <input class="form-control" id="remaining_input' +
+          '"> <input class="form-control" placeholder="Done Task" id="remaining_input' +
           counter +
           '" onchange="AddValueToRemainingTask( ' +
           counter +
@@ -195,7 +213,7 @@ $(document).ready(function () {
       $("#query_task").append(
         '<div class="form-group" id="queries_div' +
           counter +
-          '"> <input class="form-control" id="quries_input' +
+          '"> <input class="form-control" placeholder="Done Task" id="quries_input' +
           counter +
           '" onchange="AddValueToQueryTask( ' +
           counter +
@@ -220,7 +238,7 @@ $(document).ready(function () {
       $("#note_tasks").append(
         '<div class="form-group" id="notes_div' +
           counter +
-          '"> <input class="form-control" id="notes_input' +
+          '"> <input class="form-control" placeholder="Done Task" id="notes_input' +
           counter +
           '" onchange="AddValueToNotesTask( ' +
           counter +
@@ -236,7 +254,7 @@ $(document).ready(function () {
 function AddValue(id) {
   let value = $("#input" + id).val();
   $("#items").append(
-    "<li id='Valueitem" + id + "'> " + value + "[Done] " + "  </li>"
+    "<li id='Valueitem" + id + "'> " + value + " " + "[Done] " + "  </li>"
   );
 }
 
@@ -251,7 +269,7 @@ function remove_box(counter) {
 function AddValueToProgTask(id) {
   let value = $("#pro_input" + id).val();
   $("#progress_items").append(
-    "<li id='Progressitem" + id + "'> " + value + "[Done] " + " </li>"
+    "<li id='Progressitem" + id + "'> " + value + " " + "[Done] " + " </li>"
   );
 }
 
@@ -267,7 +285,7 @@ function deleteProInput(counter) {
 function AddValueToRemainingTask(id) {
   let value = $("#remaining_input" + id).val();
   $("#add_remaining_task").append(
-    "<li id='Remainingitem" + id + "'> " + value + "[Done] " + " </li>"
+    "<li id='Remainingitem" + id + "'> " + value + " " + "[Done] " + " </li>"
   );
 }
 
@@ -283,7 +301,7 @@ function deleteRemainingInput(counter) {
 function AddValueToQueryTask(id) {
   let value = $("#quries_input" + id).val();
   $("#add_queries").append(
-    "<li id='Queryitem" + id + "'> " + value + "[Done] " + " </li>"
+    "<li id='Queryitem" + id + "'> " + value + " " + "[Done] " + " </li>"
   );
 }
 
@@ -297,7 +315,7 @@ function deleteQueryInput(counter) {
 function AddValueToNotesTask(id) {
   let value = $("#notes_input" + id).val();
   $("#add_notes").append(
-    "<li id='item" + id + "'> " + value + "[Done] " + " </li>"
+    "<li id='item" + id + "'> " + value + " " + "[Done] " + " </li>"
   );
 }
 
@@ -307,4 +325,3 @@ function deleteNoteInput(counter) {
   $("#notes_div" + counter).hide();
   $("#item" + counter).remove();
 }
-
