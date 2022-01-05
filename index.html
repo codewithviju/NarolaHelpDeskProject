@@ -96,43 +96,37 @@
               <input type="text" name="" id="tl_name" class="form-control" onkeyup="changeTlName()" />
             </div>
             
-         
+          
         </div>
 
-        <div class="col-md-6 mt-5" id="info">
+        <div class="col-md-6 mt-5 p-5">
             
-          <p>
-            Updates For <span id="cl_name"></span> as on <span id="date"></span>
-          </p>
-          <hr>
-          Hi <span id="getName"></span>
-
-          <p>
-            Following Are The Updates for <span id="cl2_name"></span> as on
-            <span id="date2"></span>
-          </p>
+            <span id="cl_name"></span> <hr id="hr"> 
+            <span id="getName"></span> <br>
+            <span id="cl2_name"></span><br>
+          
+          
 
           <ol type="number" id="items">
-           <p style="font-weight: bold; text-decoration: underline;">List Of Completed Task :</p> 
+           <p style="font-weight: bold; text-decoration: underline;" id="comtask">List Of Completed Task :</p> 
           </ol>
           <ol type="number" id="progress_items">
-            <p style="font-weight: bold; text-decoration: underline;"> List Of In-Progress Task : </p>
+            <p style="font-weight: bold; text-decoration: underline;" id="protask"> List Of In-Progress Task : </p>
           </ol>
           <ol type="number" id="add_remaining_task">
-            <p style="font-weight: bold; text-decoration: underline;"> List of Remaining Task </p>
+            <p style="font-weight: bold; text-decoration: underline;" id="remaintask"> List of Remaining Task </p>
           </ol>
           <ol type="number" id="add_queries">
-            <p style="font-weight: bold; text-decoration: underline;">Queries :</p></ol>
+            <p style="font-weight: bold; text-decoration: underline;" id="Queries">Queries :</p></ol>
           </ol>
           <ol type="number" id="add_notes">
-            <p style="font-weight: bold; text-decoration: underline;"> Notes : </p> 
+            <p style="font-weight: bold; text-decoration: underline;" id="notestitle"> Notes : </p> 
           </ol>
-          <p>Please check with the latest updates and let us know your thoughts for the same.
+          <p id="info">Please check with the latest updates and let us know your thoughts for the same.
           </p>
-          <p>
-            Thanks <br>
+          
             <span id="tl_name_info"></span>
-          </p>
+          
         </div>
       </div>
     </div>
