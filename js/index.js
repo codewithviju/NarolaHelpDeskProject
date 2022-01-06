@@ -61,7 +61,7 @@ function getProjectName() {
 
 function changeTlName() {
   var title = document.getElementById("tl_name").value;
-  document.getElementById("tl_name_info").innerText = "Thanks " + title;
+  document.getElementById("tl_name_info").innerHTML = "Thanks, <br/>" + title;
 }
 
 $(document).ready(function () {
@@ -80,7 +80,7 @@ $(document).ready(function () {
     $("#info").show();
     var value = $("#completed_task").val();
 
-    $("#items").append("<li> " + value + "[Done] " + "  </li>");
+    $("#items").append("<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + "  </li>");
   });
 
   // In Progress Task
@@ -91,7 +91,7 @@ $(document).ready(function () {
     $("#info").show();
     var value = $("#progress_task").val();
 
-    $("#progress_items").append("<li> " + value + "[Done] " + " </li>");
+    $("#progress_items").append("<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>");
   });
 
   $("#remaining_task").change(function () {
@@ -100,7 +100,7 @@ $(document).ready(function () {
     $("#info").show();
     var value = $("#remaining_task").val();
 
-    $("#add_remaining_task").append("<li> " + value + "[Done] " + " </li>");
+    $("#add_remaining_task").append("<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>");
   });
 
   $("#queries").change(function () {
@@ -108,7 +108,7 @@ $(document).ready(function () {
     $("#Queries").show();
     $("#info").show();
     var value = $("#queries").val();
-    $("#add_queries").append("<li> " + value + "[Done] " + " </li>");
+    $("#add_queries").append("<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>");
   });
 
   $("#notes").change(function () {
@@ -116,7 +116,7 @@ $(document).ready(function () {
     $("#notestitle").show();
     $("#info").show();
     var value = $("#notes").val();
-    $("#add_notes").append("<li> " + value + "[Done] " + " </li>");
+    $("#add_notes").append("<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done]</span> " + " </li>");
   });
 
   // Add More Field for Completed Task
@@ -254,7 +254,7 @@ $(document).ready(function () {
 function AddValue(id) {
   let value = $("#input" + id).val();
   $("#items").append(
-    "<li id='Valueitem" + id + "'> " + value + " " + "[Done] " + "  </li>"
+    "<li id='Valueitem" + id + "'> " + value + " " + "<span style='font-weight:bold'>&nbsp;[Done] " + "  </li>"
   );
 }
 
@@ -269,7 +269,7 @@ function remove_box(counter) {
 function AddValueToProgTask(id) {
   let value = $("#pro_input" + id).val();
   $("#progress_items").append(
-    "<li id='Progressitem" + id + "'> " + value + " " + "[Done] " + " </li>"
+    "<li id='Progressitem" + id + "'> " + value + " " + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>"
   );
 }
 
@@ -285,7 +285,7 @@ function deleteProInput(counter) {
 function AddValueToRemainingTask(id) {
   let value = $("#remaining_input" + id).val();
   $("#add_remaining_task").append(
-    "<li id='Remainingitem" + id + "'> " + value + " " + "[Done] " + " </li>"
+    "<li id='Remainingitem" + id + "'> " + value + " " + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>"
   );
 }
 
@@ -301,7 +301,7 @@ function deleteRemainingInput(counter) {
 function AddValueToQueryTask(id) {
   let value = $("#quries_input" + id).val();
   $("#add_queries").append(
-    "<li id='Queryitem" + id + "'> " + value + " " + "[Done] " + " </li>"
+    "<li id='Queryitem" + id + "'> " + value + " " + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>"
   );
 }
 
@@ -315,7 +315,7 @@ function deleteQueryInput(counter) {
 function AddValueToNotesTask(id) {
   let value = $("#notes_input" + id).val();
   $("#add_notes").append(
-    "<li id='item" + id + "'> " + value + " " + "[Done] " + " </li>"
+    "<li id='item" + id + "'> " + value + " " + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>"
   );
 }
 
