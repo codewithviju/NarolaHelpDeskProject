@@ -74,77 +74,75 @@ $("#Queries").hide();
 $("#notestitle").hide();
 $("#info").hide();
 
-
 const test = [
   {
     clickAbleElementId: "completed_task_btn",
     parentInputElementId: "completed",
     notesTask: "CompletedTask",
     noteinput: "CompletedInput",
-    completedTaskInfo : "comtask",
-    completedError : "completed_error",
-    info : "info",
-    addCompletedTask : "add_completed_task"
+    completedTaskInfo: "comtask",
+    completedError: "completed_error",
+    info: "info",
+    addCompletedTask: "add_completed_task",
   },
   {
     clickAbleElementId: "progress_task_btn",
     parentInputElementId: "progress",
     notesTask: "ProgressTask",
     noteinput: "ProgressInput",
-    completedTaskInfo : "protask",
-    completedError : "progress_error",
-    info : "info",
-    addCompletedTask : "add_progress_task"
+    completedTaskInfo: "protask",
+    completedError: "progress_error",
+    info: "info",
+    addCompletedTask: "add_progress_task",
   },
   {
     clickAbleElementId: "remaining_task_btn",
     parentInputElementId: "remaining",
     notesTask: "RemainingTask",
     noteinput: "RemainingInput",
-    completedTaskInfo : "remaintask",
-    completedError : "remaining_task_error",
-    info : "info",
-    addCompletedTask : "add_remaining_task"
-    
+    completedTaskInfo: "remaintask",
+    completedError: "remaining_task_error",
+    info: "info",
+    addCompletedTask: "add_remaining_task",
   },
   {
     clickAbleElementId: "query_task_btn",
     parentInputElementId: "query",
     notesTask: "QueryTask",
     noteinput: "QueryInput",
-    completedTaskInfo : "Queries",
-    completedError : "query_error",
-    info : "info",
-    addCompletedTask : "add_queries"
+    completedTaskInfo: "Queries",
+    completedError: "query_error",
+    info: "info",
+    addCompletedTask: "add_queries",
   },
   {
     clickAbleElementId: "notes_task_btn",
     parentInputElementId: "notes",
     notesTask: "NotesTask",
     noteinput: "NoteInput",
-    completedTaskInfo : "notestitle",
-    completedError : "notes_error",
-    info : "info",
-    addCompletedTask : "add_notes"
+    completedTaskInfo: "notestitle",
+    completedError: "notes_error",
+    info: "info",
+    addCompletedTask: "add_notes",
   },
 ];
 
 
-for (let index = 0; index < test.length; index++) {
-  const element = test[index];
-  $(`#${element.parentInputElementId}`).change(function (){
-    $(`#${element.completedTaskInfo}`).show()
-    $(`#${element.completedError}`).show()
-    $(`#${element.info}`).show()
-    let value = $(`#${element.parentInputElementId}`).val()
-    $(`#${element.addCompletedTask}`).append("<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + "  </li>")
-
-  })
-}
-
 
 for (let index = 0; index < test.length; index++) {
   const element = test[index];
+  $(`#${element.parentInputElementId}`).change(function () {
+    $(`#${element.completedTaskInfo}`).show();
+    $(`#${element.completedError}`).show();
+    $(`#${element.info}`).show();
+    let value = $(`#${element.parentInputElementId}`).val();
+    $(`#${element.addCompletedTask}`).append(
+      "<li> " +
+        value +
+        "<span style='font-weight:bold'>&nbsp;[Done] " +
+        "  </li>"
+    );
+  });
   $(`#${element.clickAbleElementId}`).click(function (e) {
     console.log("Button clicked");
     e.preventDefault();
