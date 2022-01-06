@@ -73,96 +73,75 @@ $("#remaintask").hide();
 $("#Queries").hide();
 $("#notestitle").hide();
 $("#info").hide();
-$("#completed").change(function () {
-  $("#comtask").show();
-  $("#completed_error").hide();
-  $("#info").show();
-  var value = $("#completed").val();
 
-  $("#add_completed_task").append(
-    "<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + "  </li>"
-  );
-});
-
-// In Progress Task
-
-$("#progress").change(function () {
-  $("#progress_error").hide();
-  $("#protask").show();
-  $("#info").show();
-  var value = $("#progress").val();
-
-  $("#add_progress_task").append(
-    "<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>"
-  );
-});
-
-$("#remaining").change(function () {
-  $("#remaining_task_error").hide();
-  $("#remaintask").show();
-  $("#info").show();
-  var value = $("#remaining").val();
-
-  $("#add_remaining_task").append(
-    "<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>"
-  );
-});
-
-$("#query").change(function () {
-  $("#query_error").hide();
-  $("#Queries").show();
-  $("#info").show();
-  var value = $("#query").val();
-  $("#add_queries").append(
-    "<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + " </li>"
-  );
-});
-
-$("#notes").change(function () {
-  $("#notes_error").hide();
-  $("#notestitle").show();
-  $("#info").show();
-  var value = $("#notes").val();
-  $("#add_notes").append(
-    "<li> " +
-      value +
-      "<span style='font-weight:bold'>&nbsp;[Done]</span> " +
-      " </li>"
-  );
-});
 
 const test = [
   {
-    clickAbleElementId : "completed_task_btn",
+    clickAbleElementId: "completed_task_btn",
     parentInputElementId: "completed",
-    notesTask : "CompletedTask",
-    noteinput : "CompletedInput"
+    notesTask: "CompletedTask",
+    noteinput: "CompletedInput",
+    completedTaskInfo : "comtask",
+    completedError : "completed_error",
+    info : "info",
+    addCompletedTask : "add_completed_task"
   },
   {
-    clickAbleElementId : "progress_task_btn",
+    clickAbleElementId: "progress_task_btn",
     parentInputElementId: "progress",
-    notesTask : "ProgressTask",
-    noteinput : "ProgressInput"
+    notesTask: "ProgressTask",
+    noteinput: "ProgressInput",
+    completedTaskInfo : "protask",
+    completedError : "progress_error",
+    info : "info",
+    addCompletedTask : "add_progress_task"
   },
   {
-    clickAbleElementId : "remaining_task_btn",
+    clickAbleElementId: "remaining_task_btn",
     parentInputElementId: "remaining",
-    notesTask : "RemainingTask",
-    noteinput : "RemainingInput"
+    notesTask: "RemainingTask",
+    noteinput: "RemainingInput",
+    completedTaskInfo : "remaintask",
+    completedError : "remaining_task_error",
+    info : "info",
+    addCompletedTask : "add_remaining_task"
+    
   },
   {
     clickAbleElementId: "query_task_btn",
     parentInputElementId: "query",
     notesTask: "QueryTask",
     noteinput: "QueryInput",
+    completedTaskInfo : "Queries",
+    completedError : "query_error",
+    info : "info",
+    addCompletedTask : "add_queries"
   },
   {
     clickAbleElementId: "notes_task_btn",
     parentInputElementId: "notes",
     notesTask: "NotesTask",
     noteinput: "NoteInput",
-  }
+    completedTaskInfo : "notestitle",
+    completedError : "notes_error",
+    info : "info",
+    addCompletedTask : "add_notes"
+  },
 ];
+
+
+for (let index = 0; index < test.length; index++) {
+  const element = test[index];
+  $(`#${element.parentInputElementId}`).change(function (){
+    $(`#${element.completedTaskInfo}`).show()
+    $(`#${element.completedError}`).show()
+    $(`#${element.info}`).show()
+    let value = $(`#${element.parentInputElementId}`).val()
+    $(`#${element.addCompletedTask}`).append("<li> " + value + "<span style='font-weight:bold'>&nbsp;[Done] " + "  </li>")
+
+  })
+}
+
 
 for (let index = 0; index < test.length; index++) {
   const element = test[index];
@@ -198,15 +177,12 @@ for (let index = 0; index < test.length; index++) {
           ')"> - </button> </div>'
       );
     }
-
-    
   });
 }
 
-
-
 function AddValueToNotesTask(id) {
   let value = $("#notes_input" + id).val();
+
   $("#add_notes").append(
     "<li id='item" +
       id +
@@ -304,4 +280,3 @@ function deleteCompletedInput(counter) {
   $("#completed_div" + counter).hide();
   $("#item" + counter).remove();
 }
-
